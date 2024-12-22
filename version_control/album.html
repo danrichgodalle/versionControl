@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Photo Album</title>
+    <link rel="stylesheet" href="assets/bootstrap.min.css"
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check2" viewBox="0 0 16 16">
+          <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+        </symbol>
+        <symbol id="circle-half" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+        </symbol>
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+          <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+          <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+        </symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+          <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+        </symbol>
+      </svg>
+  
+      <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+        <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+                id="bd-theme"
+                type="button"
+                aria-expanded="false"
+                data-bs-toggle="dropdown"
+                aria-label="Toggle theme (auto)">
+          <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+          <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+          <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+              <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+              Light
+              <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+              <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+              Dark
+              <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+              <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+              Auto
+              <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+  
+      
+  <header data-bs-theme="dark">
+    <div class="collapse text-bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4>About</h4>
+            <p class="text-body-secondary">This Album contains pictures that captures every amazing moment in my life.</p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4>Contact</h4>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Follow on Twitter</a></li>
+              <li><a href="#" class="text-white">Like on Facebook</a></li>
+              <li><a href="#" class="text-white">Email me</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          <strong>Album</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <main>
+  
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Welcome to my All time favorite Bible Verses</h1>
+          <p class="lead text-body-secondary">This album contains images with bible verses that hold a special place in my heart. I continue life because of this verses. - keziah</p>
+          <p>
+          </p>
+        </div>
+      </div>
+    </section>
+  
+    <div class="album py-5 bg-body-tertiary">
+      <div class="container">
+  
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col">
+            <div class="card shadow-sm">
+              <image src="9.jpg" class="bd-placeholder-img card-img-top"></image>
+                <div class="card-body"><h5> </h5>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    
+                  </div>
+                  <small class="text-body-secondary"> This verse calls us to a life of self-denial, sacrifice, and commitment to Christ. Following Jesus means surrendering our own desires and ambitions to align with His will, embracing the challenges that come with living a life of faith. It’s a powerful reminder that true discipleship requires not just belief, but an active, daily choice to walk in His footsteps, trusting that the path leads to eternal life and deeper fellowship with Him...</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+                <image src="1.jpg" class="bd-placeholder-img card-img-top"></image>
+                <div class="card-body"><h5></h5>
+               <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    
+                  </div>
+                  <small class="text-body-secondary">Isaiah 41:10 reminds us of God's unwavering presence and strength in our lives, offering a profound sense of comfort and assurance. The verse says, "Do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand." It invites us to let go of fear and trust in God's power and guidance, even in times of uncertainty.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+                <image src="2.jpg" class="bd-placeholder-img card-img-top"></image>
+                <div class="card-body"><h5></h5>
+             <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                
+                  </div>
+                  <small class="text-body-secondary">This verse emphasizes the transformative power of love in relationships and community. It reminds us that genuine, selfless love can heal wounds, bridge divides, and foster forgiveness. By loving deeply, we reflect God’s grace and create an environment where reconciliation and understanding flourish. It’s a call to prioritize love in all we do, allowing it to guide our actions and interactions, making us instruments of peace and unity.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col">
+            <div class="card shadow-sm">
+                <image src="3.jpg" class="bd-placeholder-img card-img-top"></image>
+                <div class="card-body"><h5></h5>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                  
+                  </div>
+                  <small class="text-body-secondary"> This verse is a profound reminder of God's faithfulness and unwavering support. It assures us that we are never alone, even in moments of fear or uncertainty. God's promise to strengthen, help, and uphold us gives us courage to face life’s challenges with confidence. It invites us to trust in His presence and power, finding peace in knowing that His righteous hand sustains us through all trials.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+                <image src="4.jpg" class="bd-placeholder-img card-img-top"></image>
+                <div class="card-body"><h5></h5>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                
+                  </div>
+                  <small class="text-body-secondary">This verse is a comforting promise from Jesus, offering a peace that surpasses worldly understanding. Unlike temporary or conditional peace, the peace Jesus gives is enduring and rooted in His presence and love. It encourages us to release our fears and anxieties, trusting in His sovereignty and care. By embracing His peace, we can find rest for our souls, even amid life’s uncertainties.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+                <image src="5.jpg" class="bd-placeholder-img card-img-top"></image>
+                <div class="card-body"><h5></h5>
+                    <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                  </div>
+                  <small class="text-body-secondary"> This verse reveals God’s call for His people to be His witnesses, testifying to His uniqueness and sovereignty. It emphasizes the intimate relationship between God and His chosen, urging them to recognize His power and faithfulness. By knowing and believing in Him, we acknowledge that He is the one true God, and we are entrusted to share this truth with others, reflecting His glory in our lives.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col">
+            <div class="card shadow-sm">
+                <image src="6.jpg" class="bd-placeholder-img card-img-top"></image>
+                <div class="card-body"><h5></h5>
+               <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                   
+                  </div>
+                  <small class="text-body-secondary">This verse is a powerful assurance of God's presence and protection during life's trials. It reminds us that, no matter how overwhelming or challenging the circumstances, God is with us, guiding and sustaining us. The imagery of water and fire symbolizes difficulties that might seem insurmountable, yet God’s promise is that they will not overcome us. It’s an invitation to trust in His steadfast care and to face challenges with faith and confidence.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+                <image src="7.jpg" class="bd-placeholder-img card-img-top"></image>
+                <div class="card-body"><h5></h5>
+               <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                   
+                  </div>
+                  <small class="text-body-secondary">This verse is a profound reminder that our journey as believers is rooted in trust in God rather than reliance on what we can see or understand. Faith calls us to move forward confidently, even when the path is unclear, trusting in God's promises and His plan. It encourages us to fix our eyes on the eternal and unseen rather than being consumed by temporary circumstances. Living by faith is an invitation to depend on God's guidance, knowing that He is faithful to lead us in His perfect will.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+                <image src="8.jpg" class="bd-placeholder-img card-img-top"></image>
+                <div class="card-body"><h5></h5>
+                 <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                
+                  </div>
+                  <small class="text-body-secondary">This passage calls believers to live according to the Spirit rather than the desires of the flesh. It reminds us that our true life is found in surrendering to the Spirit, allowing Him to guide and transform us. Living by the Spirit leads to freedom, life, and a deeper identity as God’s children. It challenges us to reject sin and embrace a Spirit-led life, walking in the purpose and inheritance that comes from being part of God’s family.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </main>
+  
+  <footer class="text-body-secondary py-5">
+    <div class="container">
+      <p class="float-end mb-1">
+        <a href="#">Back to top</a>
+      </p>
+    </div>
+  </footer>
+  <script scr="assets/bootstrap.bundle.min.js"></script>  
+  
+      </body>
+  </html>
